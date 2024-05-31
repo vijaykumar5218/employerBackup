@@ -1,0 +1,636 @@
+Final Farewell and Gratitude from Vijay Kumar AV
+
+Hello All,
+
+This is to let you all know that Today is my Last working day at @SLK.
+
+Before setting off on the next chapter of my career journey. I wanted to take a moment to let you all know how much I've enjoyed my time here and you've played a part in that. It's been so great working with you all and getting to know you.
+
+
+Special Thanks To @Nagesh K P @Srikanth Mayya @Mahesh L. Dasharath @Harish Joshi @Narasegowda Hanumaiah @Kanagasabai S I've learned so much from your experience, advice, and guidance over the past 4.6 years, I'll carry the things I've learned with me to my next adventure, and I'll always look back on this experience with a lot of fondness.
+
+
+
+I extend a heartfelt expression of gratitude to  @Narasegowda Hanumaiah and @Prerna Verma, who have served as my managers during my tenure here. Their guidance, support, and leadership have been invaluable to me, and I am truly appreciative of the opportunity to learn and grow under their mentorship. Their dedication to our team has been exemplary, and I am thankful for the positive impact they have had on my professional journey.
+
+ 
+
+While I'm excited about the new opportunity, there's also a big part of me that's sad to be saying goodbye to amazing coworkers like you. I can't tell you how much I've enjoyed our time working together, I will miss working with each of one you. It's been great working together.
+
+
+
+
+
+Regards,
+Vijay Kumar AV
++91 8105242463/7019216026
+vijaykumar.varadaraju@gmail.com
+https://www.linkedin.com/in/vijay-kumar-av-aa774519a/
+
+
+Hi Team,
+
+The time has come for me to say farewell, as I'll be transitioning out of SLK on May-31st-2024. This wasn't an easy decision, but it's not a reflection on the incredible colleagues I've had the pleasure of working with.
+
+These 4+ years have been much more than just doing work. We've shared countless lunches that turned into good moments, laughter-filled walks through the jungle (especially those discussions under the trees), some sweat-drenched cricket matches, the countless moments filled with laughter and meaningless (but oh-so-meaningful!) discussions.
+
+The memories and laughter we've shared are truly special and something I'll cherish. You've all played a significant role in shaping me, both personally and professionally.
+
+While I'm excited about my new adventure, there's no denying I'll miss the camaraderie and friendships we've built. Consider yourselves more than just my colleagues; you've become true friends and mentors.
+
+This isn't a final goodbye, but rather a "see you later!" I hope our paths cross again in the future. Please stay in touch!
+
+I wish you all the very best in your future endeavors. Please don't hesitate to reach out if there's ever anything I can do to help.
+
+With all my affection,
+
+
+
+
+
+
+
+
+
+
+
+
+2024-3073274
+allu.lousina@wipro.com
+education and address
+
+How to routing/Nagivate worls in standalone components?
+Similar to path we provide in lazy oading the module by using loadComponent.
+ 
+
+what is track by in angular?
+trackBy is a function that you can provide to the NgForOf directive to improve the performance of rendering lists or collections, especially when working with large datasets. It allows Angular to track the identity of items in the list more efficiently, reducing the number of DOM manipulations needed when the list changes.
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-item-list',
+  template: `
+    <ul>
+      <li *ngFor="let item of items; trackBy: trackById">{{ item.name }}</li>
+    </ul>
+  `
+})
+export class ItemListComponent {
+  items = [
+    { id: 1, name: 'Item 1' },
+    { id: 2, name: 'Item 2' },
+    { id: 3, name: 'Item 3' }
+  ];
+
+  trackById(index: number, item: any): number {
+    return item.id;
+  }
+}
+
+Using trackBy can significantly improve the performance of rendering lists, especially when dealing with large datasets or lists that frequently change. It's an optimization technique recommended for Angular applications when working with NgForOf.
+
+How to reset an reactive form?
+In Angular, you can reset a reactive form by using the reset() method provided by the FormGroup class. This method resets the form back to its pristine state, which means all form controls are marked as untouched, their values are set to their initial values (if provided), and any validation errors are cleared.
+
+ngOnInit() {
+    this.myForm = this.formBuilder.group({
+      // Define your form controls here
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]]
+    });
+  }
+
+//When you want to reset the form, call the reset() method on the FormGroup instance.
+resetForm() {
+  this.myForm.reset();
+}
+
+
+setValue() and patchValue() in Forms
+setValue() and patchValue() are methods provided by the FormControl and FormGroup classes for setting the value of form controls in reactive forms.
+
+setValue():
+The setValue() method is used to set the value of all form controls within a FormGroup instance.
+It expects an object that contains values for all form controls defined within the form group.
+If you attempt to set values for form controls that are not included in the provided object, Angular will throw an error.
+This method enforces strictness regarding the structure of the provided object, ensuring that all form controls have values.
+
+// Assuming you have a FormGroup named 'myForm' with form controls 'firstName' and 'lastName'
+this.myForm.setValue({
+  firstName: 'John',
+  lastName: 'Doe'
+});
+
+patchValue():
+The patchValue() method is used to set the value of selected form controls within a FormGroup instance.
+It also expects an object that contains values for one or more form controls.
+Unlike setValue(), it does not enforce strictness regarding the structure of the provided object. You can pass an object with values for only the form controls you want to update.
+If you attempt to set values for form controls that are not included in the provided object, Angular will not throw an error. It will simply ignore those values.
+
+// Assuming you have a FormGroup named 'myForm' with form controls 'firstName' and 'lastName'
+this.myForm.patchValue({
+  firstName: 'John'
+});
+
+
+zone.js?
+In JavaScript, a "zone" is a concept that represents an execution context or a task. zone.js intercepts asynchronous operations such as timers, promises, and event listeners, and it can detect when these operations start and finish within a given zone. This interception allows zone.js to provide features such as:
+
+Change Detection: In Angular, zone.js is used to trigger change detection whenever asynchronous operations complete. This ensures that the Angular application's UI stays in sync with the application state.
+Error Handling: zone.js can detect errors that occur within asynchronous operations and report them to the appropriate error handling mechanism. This is particularly useful for debugging asynchronous code in Angular applications.
+Performance Monitoring: zone.js can be used to measure the duration of asynchronous operations and track their performance. This can help identify performance bottlenecks and optimize application performance.
+Zone.js Context: zone.js provides a context for asynchronous operations, allowing developers to manage and manipulate this context as needed. This can be useful for tasks such as profiling, debugging, and testing.
+
+Overall, zone.js is a powerful tool for managing asynchronous operations in JavaScript applications, particularly in the context of frameworks like Angular where change detection and error handling are critical. While it is primarily associated with Angular, zone.js can be used in any JavaScript application to enhance error handling and performance monitoring.
+
+
+what is router outlet and multiple outlet?
+
+<!-- app.component.html -->
+<router-outlet></router-outlet>
+In this example, the router-outlet directive is placed in the HTML template of the root component (AppComponent). When the Angular Router navigates to a route, it renders the component associated with that route inside the router-outlet.
+
+Angular supports the concept of named router outlets, which allows you to have multiple outlets in your application. Each outlet can be associated with a different router configuration, enabling you to render components in different parts of the layout based on the current route.
+
+<!-- app.component.html -->
+<router-outlet></router-outlet>
+<router-outlet name="sidebar"></router-outlet>
+
+In this example, we have two router-outlet directives: one without a name (the default outlet) and one with the name "sidebar". The default outlet will render the main content of the application, while the "sidebar" outlet will render components specific to the sidebar area.
+
+To use a named outlet in your routing configuration, you specify the outlet name in the route configuration:
+// app-routing.module.ts
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'dashboard', component: DashboardComponent, outlet: 'sidebar' },
+  // Other route configurations
+];
+
+
+Operators in RXJS?
+RxJS provides a wide range of operators that enable you to work with observable streams in a flexible and powerful way. These operators allow you to transform, filter, combine, and manipulate observable data streams. Here are some commonly used RxJS operators categorized by their functionalities:
+
+Creation Operators:
+of: Creates an observable from a sequence of values.
+from: Converts various other objects and data types into observables.
+interval: Emits sequential numbers at regular intervals.
+timer: Emits values after a specified delay.
+Transformation Operators:
+map: Transforms each value emitted by the source observable.
+pluck: Retrieves the value of a specified property from each emitted object.
+switchMap: Maps each value to an inner observable, then flattens all inner observables into a single observable.
+mergeMap (formerly flatMap): Maps each value to an inner observable and merges the resulting observables into one observable.
+concatMap: Maps each value to an inner observable and concatenates the resulting observables in order.
+scan: Accumulates values over time, emitting each intermediate result.
+Filtering Operators:
+filter: Filters the values emitted by the source observable based on a predicate function.
+take: Emits a specified number of values from the start of the source observable.
+takeUntil: Emits values from the source observable until a notifier observable emits a value.
+distinctUntilChanged: Filters out consecutive duplicate values emitted by the source observable.
+debounceTime: Emits a value from the source observable only after a specified time has passed without any other value being emitted.
+Combination Operators:
+merge: Combines multiple observables into one observable that emits all values from all source observables concurrently.
+concat: Concatenates multiple observables into one observable that emits all values from each source observable in sequence.
+combineLatest: Combines the latest values from multiple observables into one observable, emitting an array of all latest values whenever any source observable emits a new value.
+forkJoin: Combines the latest values from multiple observables into one observable, emitting an array of all latest values when all source observables complete.
+Error Handling Operators:
+catchError (formerly catch): Catches errors emitted by the source observable and replaces them with another observable or value.
+retry: Re-subscribes to the source observable when it encounters an error, up to a specified number of retries.
+Utility Operators:
+tap: Performs side effects for each value emitted by the source observable without affecting the values emitted.
+delay: Delays the emissions of values from the source observable by a specified amount of time.
+finalize: Invokes a specified callback when the source observable completes or errors, regardless of when it happens.
+These are just a few examples of the many operators available in RxJS. Each operator serves a specific purpose and can be combined and chained together to create complex data flows and transformations in reactive programming.
+
+Dependencies and DevDependencies
+dependencies and devDependencies are defined in the package.json file, and they serve different purposes.
+
+DevDependencies:DevDependencies are the packages that are only needed during development and are not required for the runtime execution of your Angular application. These packages are used for development tasks such as testing, linting, bundling, and building your application. Examples of devDependencies include testing frameworks (@angular/cli, jasmine, karma), build tools (typescript, @babel/core, webpack), and code quality tools (eslint, prettier).DevDependencies are typically listed under the "devDependencies" field in the package.json file. They are not included in the final production build of your application unless explicitly required (e.g., in the case of build tools or configuration files).Example of listing devDependencies in package.json:
+"devDependencies": {
+  "@angular/cli": "^13.2.2",
+  "typescript": "^4.5.4",
+  "eslint": "^8.2.0"
+}
+
+Dependencies:Dependencies are the packages that your Angular application relies on for its runtime functionality. These packages are required for your application to run properly in both development and production environments. Examples of dependencies in an Angular project typically include Angular framework libraries (@angular/core, @angular/common, etc.), third-party libraries for UI components or HTTP requests (rxjs, @angular/material, etc.), and other utility libraries.When you install dependencies using npm or yarn (npm install or yarn install), they are added to the node_modules folder in your project and are available for use in your application code. Dependencies are typically listed under the "dependencies" field in the package.json file.Example of listing dependencies in package.json:
+"dependencies": {
+  "@angular/core": "^13.2.0",
+  "rxjs": "^7.5.0",
+  "@angular/material": "^13.2.1"
+}
+
+
+map()-> it wont modified original array return the modified array.
+forEach()-> it modified the original array(it modified outside the scope) and return the undefine.
+
+ngbuild and ngServe what it will do in details?
+how environment specification congiguration work in angukatr?
+use of interceptor?
+flatMap()
+call() apply() bind()
+localization in app
+types of promises - promise all promise all settle promise rise
+changeDetection
+
+
+dump component and smart component
+
+dump component -> read only data, Get the data from the parent  component and show it as it is in DOM.
+smart component -> get the dta from api, pass it to child/dump component and dump component return the value and it will display in smart domponent only.
+
+Change Detection?
+Angular
+debouncing and throttling
+ 
+
+
+How to improve an performance of the angular application?
+ 
+
+tree shaking?.....;;
+ 
+
+prototype in JS?
+In JavaScript, a prototype is an object that serves as a template for another object. Every JavaScript object has a prototype, which it inherits properties and methods from.
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.greet = function() {
+  console.log("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
+};
+
+var john = new Person("John", 30);
+john.greet(); // Output: Hello, my name is John and I am 30 years old.
+
+
+Uses of arrow function?
+
+Uses:
+Arrow functions with a single expression automatically return the result of that expression without needing the return keyword.
+// Traditional function expression
+var double = function(x) {
+  return x * 2;
+};
+
+// Arrow function with implicit return
+var double = (x) => x * 2;
+
+Drawbacks:
+No Binding of this: -> 
+var obj = {
+  value: 42,
+  getValue: function() {
+    return this.value;
+  },
+  getArrowValue: () => this.value
+};
+
+console.log(obj.getValue()); // Output: 42
+console.log(obj.getArrowValue()); // Output: undefined (this is not bound to obj)
+
+Cannot be Used as Constructors:
+Arrow functions cannot be used as constructors with the new keyword. Attempting to do so will result in a runtime error.
+
+Event delegation 
+Event delegation is a technique used in JavaScript to handle events efficiently by attaching a single event listener to a parent element rather than attaching multiple event listeners to individual child elements. With event delegation, you can manage events for multiple elements within a container element with just one event handler.
+
+document.getElementById('parent').addEventListener('click', function(event) {
+  // Check if the event target is a child element
+  if (event.target.classList.contains('child')) {
+    // Handle the event for child elements
+    event.target.classList.toggle('active'); // Example: Toggle CSS class
+  }
+});
+
+Benefits of Event Delegation:
+Performance: By attaching a single event listener to a parent element, you reduce the number of event handlers in your application, leading to better performance, especially in scenarios with many dynamically created child elements.
+Simplicity and Maintainability: Event delegation simplifies code by centralizing event handling logic in one place, making it easier to manage and maintain.
+Dynamic Elements: Event delegation works well with dynamically created or added elements because you don't need to attach event listeners to each new element manually.
+
+
+Destructuring:
+Destructuring is a feature in JavaScript that allows you to extract values from objects or arrays and assign them to variables in a concise and intuitive way. It provides a convenient syntax for unpacking values from data structures into separate variables.
+
+There are two main types of destructuring: object destructuring and array destructuring.
+
+Object Destructuring:
+Object destructuring allows you to extract properties from objects and assign them to variables with the same name as the property.
+// Object
+const person = { name: 'John', age: 30 };
+
+// Destructuring
+const { name, age } = person;
+
+console.log(name); // Output: John
+console.log(age);  // Output: 30
+
+You can also assign extracted values to variables with different names using the syntax variableName: newVariableName.
+const { name: personName, age: personAge } = person;
+
+console.log(personName); // Output: John
+console.log(personAge);  // Output: 30
+
+Array Destructuring:
+Array destructuring allows you to extract elements from arrays and assign them to variables based on their position in the array.
+// Array
+const numbers = [1, 2, 3, 4, 5];
+
+// Destructuring
+const [first, second, third] = numbers;
+
+console.log(first);  // Output: 1
+console.log(second); // Output: 2
+console.log(third);  // Output: 3
+
+You can also use array destructuring with the rest parameter (...) to capture the remaining elements of an array.
+const [first, ...rest] = numbers;
+
+console.log(first); // Output: 1
+console.log(rest);  // Output: [2, 3, 4, 5]
+
+NGCC 
+trackby-> iin bfFor if we have 5 elemts it will add all 5 initialiy, suppose we ass one more elemets it will reload the loop again, to avoid that we use trackBy in that time it will just add 6th elements without reload the loop
+
+
+Navigate() and NavigateByUrl()----?
+navigate()
+Purpose: Construct the route dynamically using an array of path segments and parameters.
+Usage: When you need to build the URL by combining different parts, possibly including route parameters or query parameters.
+navigateByUrl()
+Purpose: Directly navigate to a specified URL given as a string.
+Usage: When you have the complete URL as a string and don't need to dynamically construct it.
+
+OutPut:
+
+console.log(a); // Output: undefined
+console.log(b); // Output: ReferenceError: b is not defined
+var a = b = 5;
+
+why its saying b is undefine in JS?
+So, var a; is hoisted to the top, but var b is not declared yet. Hence, b is considered an implicit global variable due to assignment without declaration (b = 5;).
+ Implicit global variables are generally discouraged because they can lead to unexpected behavior and bugs. 
+To fix this issue and ensure b is properly declared, you should explicitly declare it:
+https://citiustech.mynexthire.com/employer/interview/citiustech51401714374232427
+
+const foo = () => {
+	console.log(this.name);  //undefine -> for empty function it will refer to window object not the sending object
+}
+foo.call({name:'vijay'});
+
+
+const foo1 = function() {
+	console.log(this.name); // It will print vijay
+}
+foo1.call({name:'vijay'});
+
+
+
+
+
+what is the use defer attribute?
+<script src="script.js" defer></script>
+the defer attribute is used with <script> elements to indicate that the script should be executed after the document has been parsed. 
+How it works:
+When a browser encounters a <script> tag with the defer attribute, it will continue to parse the HTML document without waiting for the script to be fetched and executed. However, the script will be executed in the order they appear in the document, after the HTML parsing is complete, but before the DOMContentLoaded event fires.  improving page load performance and ensuring correct script execution order.
+	
+Difference between div and span?
+div-> 
+inline and block element?
+always block elelmts takes width of its parent. not of the view port.
+Inline elemts we cant give height and width where we can give it for div
+what is the use of ALT in HTML?
+it is used for sematic tags, for screen readers it will be use for accesibility.
+How to create an OrderList?
+what is the use of Head Tag?
+The <head> section contains metadata about the document, which is not displayed on the web page itself but provides important information to browsers and search engines. This metadata is typically defined using elements like <title>, <meta>, and <link>.
+<title>: Defines the title of the document, which appears in the browser's title bar or tab.
+<meta>: Defines metadata such as character encoding (charset), viewport settings for responsive design (viewport), author information (author), description (description), keywords (keywords), etc.
+<link>: Defines external resources linked to the document, such as stylesheets (stylesheet), favicons (icon), RSS feeds (alternate), etc.
+
+box-sizing: border-box  VS box-sizing: content-box.
+box-sizing: border-box;
+When you set box-sizing to border-box, the width and height of the element include the padding and border, but not the margin. This means that the total width of the element remains constant even when padding and borders are added.
+.box {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+In this example, the total width of the .box element will be 200px, including the padding and border. The content area will be 200px - (20px * 2) - (2px * 2) = 156px, leaving 156px for the content.
+
+box-sizing: content-box;:
+When you set box-sizing to content-box, the width and height of the element only include the content area, and padding and border are added to the width and height.
+.box {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border: 2px solid black;
+  box-sizing: content-box;
+}
+In this example, the total width of the .box element will be 200px + (20px * 2) + (2px * 2) = 244px, including the padding and border. The content area will remain 200px.
+
+
+which selectors as more specificity. ???
+Inline style as maximize specificity. 
+ID selector as more specificity
+
+
+DOM
+The Document Object Model, usually referred to as the DOM, is an essential part of making websites interactive. It is an interface that allows a programming language to manipulate the content, structure, and style of a website.
+HTML documents can be viewed as tree-like structures represented by the Document Object Model (DOM), which provides a way to programmatically access and manipulate the content and structure of web documents.
+
+Object representation of HTML
+HTML is an tree like structure
+Can we give Custom tag in HTML?
+<p>Vijay</p>
+<vijay style="width:200px; background-color:green">Kumar</vijay>
+<div  style="width:200px; background-color:green">Vijay-Div</div>
+<span>Vijay-span</span>
+
+in Above code:
+We can give our own custom tag<vijay></vijay> . It will not give any error but it will act similar to span.
+ie we can able to give width and span for inLine element
+
+How can we make inline element to block element? OR 
+we can't give heigth and width of line element ie for span?
+
+<span style="display: inline-block; width: 100px; height: 50px; background-color: red;"></span>
+
+display: inline-block;: This property makes the <span> element behave like a block-level element while still retaining its inline properties. This allows us to set a width and height for it.
+
+Pseudo-Elements:
+Pseudo-elements are used to style certain parts of an element's content. They allow you to style parts of an element that are not part of the actual HTML structure. Pseudo-elements are denoted by double colons (::) and include common examples like ::before, ::after, ::first-line, and ::first-letter.
+p::first-line {
+  font-weight: bold;
+}
+p::before {
+  content: "Before text: ";
+}
+Pseudo-Classes:
+Pseudo-classes are used to define the special state of an element. They allow you to style an element based on its state or relationship with other elements, such as hover, focus, active, first-child, etc. Pseudo-classes are also denoted by a single colon (:).
+a:hover {
+  color: red;
+}
+input:focus {
+  border-color: blue;
+}
+li:first-child {
+  font-weight: bold;
+}
+
+differenece between if Else and Ternary operator:
+
+if else is an statement -> define expression not evaluated to an single value 
+ whereas ternary is an expression-> -> define expression evaluated to an single value 
+ie we can store an const tempValue = express ? trueValue : False:Value:
+tempValue is an return value which we cant do this in if else?
+
+== Equality Operator
+The == operator checks for equality of values after performing type coercion if necessary.
+If the two operands are of different types, JavaScript will attempt to convert them to the same type before making the comparison.
+Examples of type coercion:
+1 == '1'; // true, because '1' is coerced to a number before comparison
+true == 1; // true, because true is coerced to 1 before comparison
+0 == ''; // true, because both are coerced to falsey values
+
+=== Strict Equality Operator
+The === operator checks for strict equality, meaning it checks both the value and the type of the operands without performing any type coercion.
+It returns true if the operands are of the same type and have the same value. Otherwise, it returns false.
+1 === '1'; // false, because they are of different types
+true === 1; // false, because they are of different types
+0 === ''; // false, because they are of different types
+
+
+type conversion in JS, how does it works?
+
+Implicit Type Conversion:
+Implicit type conversion happens automatically when values of one data type are used in contexts where a different data type is expected. JavaScript will attempt to convert the value to the appropriate type to perform the operation. This often occurs in expressions involving operators or in function arguments.
+
+// String concatenation
+let result = "3" + 2; // Implicitly converts 2 to a string, resulting in "32"
+// Arithmetic operation
+let sum = "3" - 1; // Implicitly converts "3" to a number, resulting in 2
+
+let result = "3" + 2;
+console.log(result );
+let sum = "3" - 1; 
+console.log(sum );
+
+
+Explicit Type Conversion:
+Explicit type conversion occurs when you explicitly convert a value from one data type to another using built-in JavaScript functions or operators. This is often necessary when you want to ensure a specific data type for a variable or when performing certain operations.
+// String to Number
+let str = "123";
+let num = Number(str); // Explicitly converts the string "123" to a number
+
+// Number to String
+let num = 123;
+let str = num.toString(); // Explicitly converts the number 123 to a string
+
+JavaScript provides several functions and methods for explicit type conversion, such as Number(), String(), Boolean(), parseInt(), parseFloat(), and the .toString() method.
+
+console.log(typeof NaN); number
+console.log(+"22"); //22
+console.log(+"hellow"); //Nan
+console.log(NaN === NaN); //false
+
+console.log(typeof NaN); 
+console.log(+"22"); 
+console.log(+"hellow"); 
+console.log(NaN === NaN);  
+
+
+  // false -> NaN may come from any string(hai/hello etsc....) 
+
+ChatGPT 
+
+cammands
+continue  -> list will continue where it given pause
+
+compare and contrast
+
+pros and cons
+
+Devils advocate
+
+ROLEPAY
+
+translate -> 
+
+clarify/Explain in simple terms/ explain step by step
+
+brainstorm/list
+
+rephrase and summarize
+
+
+Maruti H
+7:12?PM
+https://www.programiz.com/javascript/online-compiler/
+firstFun();
+let obj=new newClass();
+function firstFun(){
+    console.log('Method hit')
+}
+function secondFun(id){
+    console.log('Second Method:',id)
+}
+class newClass{
+    id=10;
+}
+secondFun(obj.id)
+Maruti H
+7:18?PM
+var a ={ id:1, Name : `test'}
+var b=a ;
+b.id=3;
+console.log(alb);
+Maruti H
+7:29?PM
+https://stackblitz.com/edit/angular-live-compiler?file=src%2Fapp%2Fapp.component.ts
+Angular Interview with Vijay
+
+LWD:
+The Last Working Day (LWD) in SLK is today, May-28, 2024. 
+This is due to the fact that I submitted my paper on March 20th. Originally, my project was supposed to roll out on May 18-19, which is why the company offered me the LWD for May 20th.
+
+Unfortunately, there was a minor issue in production, causing the roll out to be extended to June 1-2.
+
+I had committed to the offer for May-29th and therefore extended my work until tomorrow.
+
+I have always requested my joining date to be June 7 because I have personal matters to attend to before joining the organization. I want to ensure that I have completed all necessary personal tasks before starting at your organization, so that I can fully focus on my work once I begin.
+
+Initailly i aked for the offer holding company that, i will join on june7/10, Fo that 
+About Wipro:
+It was founded in 1945 and is headquartered in Bangalore, India. 
+Wipro is a leading global information technology, consulting, and business process services company.
+The company has a strong presence in more than 50 countries across six continents and serves clients in various industries, such as banking, finance, healthcare, insurance, retail, and telecommunications, among others.
+Wipro is known for its strong culture and values and has been recognized for its commitment to sustainability, corporate governance, and diversity and inclusion. 
+The company's vision is to be a leading provider of innovative and customer-centric technology solutions that drive business value.
+
+Why Wipro:
+Im sure if i join wipro it will make a huge difference in an currier growth, there are many known people in my surrounding who are very much happy with the culture wipro is offering. In our Organisation aslo i have an words with ex employees of Wipro, And also present CEO of SLK is from Wipro itseft. Now a days they are bringing some good chnages for entair organisation that motivates me.
+I am confident that working for Wipro would provide me with the opportunity to grow both professionally and personally, while also contributing to the company's continued success.
+
+Strength:
+Im a curious person which is make me an quick learner.
+One of my key strengths is my ability to quickly learn and adapt to new technologies and  methodologies. for example learning ionic, Unit test cases, 
+
+Weaknesses:
+When we are working on high-quality code or results, sometimes tasks take longer than expected, which may require me to work extra hours to meet deadlines.
+
+Any questions for me?
+could you provide more insight into the growth opportunities within the company for employees who consistently deliver strong results?
+B2->SSE? varibale 7.5 quaterly
+
+Under which grade i will comes under for this payroll/for my Designation.
+Working Location ??
+project which i have working for or ClientName.? BFSI, 
+Salary Structure and in Hand expected incuding or excluding Tax.
+
